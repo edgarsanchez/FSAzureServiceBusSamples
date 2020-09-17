@@ -42,7 +42,7 @@ let registerOnMessageHandlerAndReceiveMessages (subscriptionClient: ISubscriptio
             AutoComplete = false )
 
     // Register the function that will process messages
-    subscriptionClient.RegisterMessageHandler (Func<_,_,_> (processMessagesAsync subscriptionClient), messageHandlerOptions)
+    subscriptionClient.RegisterMessageHandler (processMessagesAsync subscriptionClient, messageHandlerOptions)
      
 [< EntryPoint >]
 let main _ =

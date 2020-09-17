@@ -41,7 +41,7 @@ let registerOnMessageHandlerAndReceiveMessages (queueClient: IQueueClient) =
             AutoComplete = false )
 
     // Register the function that will process messages
-    queueClient.RegisterMessageHandler (Func<_,_,_> (processMessagesAsync queueClient), messageHandlerOptions)
+    queueClient.RegisterMessageHandler (processMessagesAsync queueClient, messageHandlerOptions)
      
 [< EntryPoint >]
 let main _ =
